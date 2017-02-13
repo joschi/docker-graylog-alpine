@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER Jochen Schalanda <jochen+docker@schalanda.name>
 
-ENV GRAYLOG_VERSION 2.2.0-rc.1
+ENV GRAYLOG_VERSION 2.2.0
 ENV GRAYLOG_URL_BASE https://packages.graylog2.org/releases/graylog
 ENV PATH /opt/graylog/bin:$PATH
 
