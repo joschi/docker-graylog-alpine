@@ -10,7 +10,7 @@ services:
     volumes:
       - ./elasticsearch:/usr/share/elasticsearch/data
   graylog:
-    image: joschi/graylog-alpine:2.2.0
+    image: joschi/graylog-alpine:2.2.1-1
     volumes:
       - ./journal:/opt/graylog/data/journal
     environment:
