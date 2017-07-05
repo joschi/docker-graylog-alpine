@@ -6,7 +6,7 @@ services:
     image: "elasticsearch:2"
     command: "elasticsearch -Des.cluster.name='graylog'"
   graylog:
-    image: joschi/graylog-alpine:2.2.3-1
+    image: joschi/graylog-alpine:2.3.0-rc.1-1
     environment:
       # CHANGE ME!
       GRAYLOG_PASSWORD_SECRET: somepasswordpepper
