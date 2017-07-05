@@ -1,26 +1,44 @@
 version: '2'
 services:
   mongodb:
-    image: "mongo:3"
+    image: mongo:3
     volumes:
-      - ./mongodb:/data/db
+      - mongodata:/data/db
   elasticsearch:
-    image: "elasticsearch:2"
-    command: "elasticsearch -Des.cluster.name='graylog'"
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
+    environment:
+      - http.host=0.0.0.0
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    ports:
+      - 9200:9200
     volumes:
-      - ./elasticsearch:/usr/share/elasticsearch/data
+      - esdata:/usr/share/elasticsearch/data
   graylog:
     image: joschi/graylog-alpine:2.3.0-rc.1-1
     volumes:
-      - ./journal:/opt/graylog/data/journal
+      - graylogdata:/opt/graylog/data/journal
     environment:
       # CHANGE ME!
-      GRAYLOG_PASSWORD_SECRET: somepasswordpepper
+      - GRAYLOG_PASSWORD_SECRET=somepasswordpepper
       # Password: admin
-      GRAYLOG_ROOT_PASSWORD_SHA2: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
-      GRAYLOG_WEB_ENDPOINT_URI: http://127.0.0.1:9000/api
+      - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+      - GRAYLOG_WEB_ENDPOINT_URI=http://127.0.0.1:9000/api
+      - GRAYLOG_ELASTICSEARCH_HOSTS=http://elastic:changeme@elasticsearch:9200
     depends_on:
       - mongodb
       - elasticsearch
     ports:
-      - "9000:9000"
+      - 9000:9000
+
+volumes:
+  mongodata:
+    driver: local
+  esdata:
+    driver: local
+  graylogdata:
+    driver: local
