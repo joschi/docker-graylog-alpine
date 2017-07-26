@@ -19,7 +19,7 @@ services:
     volumes:
       - esdata:/usr/share/elasticsearch/data
   graylog:
-    image: joschi/graylog-alpine:2.3.0-rc.2-1
+    image: joschi/graylog-alpine:2.3.0-1
     volumes:
       - graylogdata:/opt/graylog/data/journal
     environment:
