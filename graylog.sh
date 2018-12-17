@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+JAVA_CMD='/usr/bin/java'
 if [ -n "$JAVA_HOME" ]
 then
     # try to use $JAVA_HOME
