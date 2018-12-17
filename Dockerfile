@@ -1,7 +1,7 @@
 FROM azul/zulu-openjdk-alpine:8
 MAINTAINER Jochen Schalanda <jochen+docker@schalanda.name>
 
-ENV GRAYLOG_VERSION 2.4.6
+ENV GRAYLOG_VERSION 2.5.0
 ENV GRAYLOG_URL_BASE https://packages.graylog2.org/releases/graylog
 ENV PATH /opt/graylog/bin:$PATH
 

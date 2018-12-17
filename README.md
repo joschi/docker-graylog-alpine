@@ -20,7 +20,7 @@ Plugins, content packs, and other add-ons can be downloaded from the [Graylog Ma
 
 ## Configuration
 
-Every configuration setting of the [Graylog configuration file](https://github.com/Graylog2/graylog2-server/blob/2.4.6/misc/graylog.conf) can be set via environment variables by adding the `GRAYLOG_` prefix and using upper case.
+Every configuration setting of the [Graylog configuration file](https://github.com/Graylog2/graylog2-server/blob/2.5.0/misc/graylog.conf) can be set via environment variables by adding the `GRAYLOG_` prefix and using upper case.
 
 Examples:
 
@@ -56,7 +56,7 @@ This Docker image can optionally be configured by adding a custom Graylog config
 
 Graylog only writes data into two locations, which have to be persisted in Docker volumes to survive a container restart:
 
-* `/opt/graylog/data/journal`: Path to the Graylog disk journal, can be configured with the [`GRAYLOG_MESSAGE_JOURNAL_DIR`](https://github.com/Graylog2/graylog2-server/blob/2.4.6/misc/graylog.conf#L415-L422) environment variable.
+* `/opt/graylog/data/journal`: Path to the Graylog disk journal, can be configured with the [`GRAYLOG_MESSAGE_JOURNAL_DIR`](https://github.com/Graylog2/graylog2-server/blob/2.5.0/misc/graylog.conf#L415-L422) environment variable.
 * `/opt/graylog/config/node-id`: The Graylog node ID file, necessary to persist if the `GRAYLOG_NODE_ID` environment variable is not being used.
 
 

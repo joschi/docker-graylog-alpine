@@ -15,7 +15,7 @@ services:
     ports:
       - 9200:9200
   graylog:
-    image: joschi/graylog-alpine:2.4.6-1
+    image: joschi/graylog-alpine:2.5.0-1
     environment:
       # CHANGE ME!
       - GRAYLOG_PASSWORD_SECRET=somepasswordpepper
