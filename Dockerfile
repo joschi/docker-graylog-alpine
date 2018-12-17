@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM azul/zulu-openjdk-alpine:8
 MAINTAINER Jochen Schalanda <jochen+docker@schalanda.name>
 
 ENV GRAYLOG_VERSION 2.4.6
