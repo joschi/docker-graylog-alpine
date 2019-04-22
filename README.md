@@ -60,14 +60,6 @@ Graylog only writes data into two locations, which have to be persisted in Docke
 * `/opt/graylog/config/node-id`: The Graylog node ID file, necessary to persist if the `GRAYLOG_NODE_ID` environment variable is not being used.
 
 
-## Caveats
-
-Currently there's no support for binding to privileged ports (via [Linux kernel capabilities](https://docs.docker.com/engine/security/security/#/linux-kernel-capabilities)) due to the following issues:
-
-* https://github.com/docker/docker/issues/8460
-* https://github.com/docker-library/openjdk/issues/77
-
-
 ## License
 
 This Docker image is licensed under the MIT license, see [LICENSE](LICENSE).
