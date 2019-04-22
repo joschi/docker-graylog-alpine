@@ -9,7 +9,7 @@ fi
 
 # Drop root privileges if we are running elasticsearch
 # allow the container to be started with `--user`
-if [ "$1" = 'graylog' -a "$(id -u)" = '0' ]; then
+if [ "$1" = 'graylog' ] && [ "$(id -u)" = '0' ]; then
 	# Change the ownership of user-mutable directories to elasticsearch
 	for path in \
 		/opt/graylog/data \

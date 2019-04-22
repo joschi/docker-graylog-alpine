@@ -21,7 +21,7 @@ DEFAULT_JAVA_OPTS="-Djava.library.path=${GRAYLOG_DIR}/lib/sigar -Xms1g -Xmx1g -X
 
 JAVA_OPTS="${JAVA_OPTS:="$DEFAULT_JAVA_OPTS"} -Dgraylog2.installation_source=docker"
 
-if [ ! -z "${GRAYLOG_NODE_ID}" ]; then
+if [ -n "${GRAYLOG_NODE_ID}" ]; then
 	echo -n "${GRAYLOG_NODE_ID}" > "${GRAYLOG_DIR}/config/node-id"
 fi
 
