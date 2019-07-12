@@ -1,5 +1,5 @@
 # Build stage
-FROM alpine:3.10.0 as builder
+FROM alpine:3.10.1 as builder
 ENV GRAYLOG_URL_BASE https://packages.graylog2.org/releases/graylog
 ENV GRAYLOG_VERSION 2.5.2
 RUN apk add --no-cache bash curl
